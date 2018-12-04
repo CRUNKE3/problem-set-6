@@ -11,7 +11,9 @@
  */
 
 function sayHello() {
-
+  var p = document.getElementById("canvas1").getContext("2d");
+  p.font = "48px sans-serif";
+  p.strokeText("Hello, World!", 10, 50);
 }
 
 /*
@@ -38,7 +40,35 @@ function sayHello() {
  */
 
 function drawRectangle() {
+  var p = document.getElementById("canvas2").getContext("2d");
 
+    let height = prompt("Height:")
+
+    let width = prompt("Width:")
+
+    let topLeftX = prompt("X:")
+
+    let topLeftY = prompt("Y:")
+
+    if (height < 1) {
+      alert("Your height value is too small");
+    }
+    if (width < 1) {
+      alert("Your width value is too small");
+    }
+    if (height && width < 1) {
+      alert("Your height/width value is too small");
+    }
+    if (topLeftX < 5) {
+      alert("Your X value is too small")
+    }
+    if (topLeftY < 5) {
+        alert("Your Y value is too small")
+      }
+    if (topLeftX && topLeftY < 5) {
+      alert("Your X/Y value is too small")
+    }
+  p.strokeRect(topLeftX, topLeftY, width, height)
 }
 
 /*
@@ -67,7 +97,14 @@ function drawRectangle() {
  */
 
 function drawColoredRectangle() {
-
+  var p = document.getElementById("canvas3").getContext("2d");
+  let color = prompt("Color:");
+  p.fillStyle = `${color}`;
+  if (color = black || blue || green || orange || purple || red || yellow) {
+    p.fillRect(10, 10, 100, 50);
+  } else {
+    alert(`${color} is not a supported color.`);
+  }
 }
 
 /*
