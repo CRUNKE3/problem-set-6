@@ -99,14 +99,21 @@ function drawRectangle() {
 function drawColoredRectangle() {
   var p = document.getElementById("canvas3").getContext("2d");
   let color = prompt("Color:");
-  p.fillStyle = `${color}`;
-  if (color = black || blue || green || orange || purple || red || yellow) {
+  let supportedColor = false
+  if (color === "black" || "blue" || "green" || "orange" || "purple" || "red" || "yellow") {
+    supportedColor = true
+  } else {
+    supportedColor = false
+  }
+  if (supportedColor = true) {
+    p.clearRect(10, 10, 100, 50);
+    p.fillStyle = `${color}`;
     p.fillRect(10, 10, 100, 50);
   } else {
-    alert(`${color} is not a supported color.`);
+    p.clearRect(10, 10, 100, 50);
+    alert("We do not support the given color");
   }
 }
-
 /*
  * Triangle. 5 points.
  *
