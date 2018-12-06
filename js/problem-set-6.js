@@ -100,7 +100,7 @@ function drawColoredRectangle() {
   var p = document.getElementById("canvas3").getContext("2d");
   let color = prompt("Color:");
   let supportedColor = false
-  if (color === "black" || "blue" || "green" || "orange" || "purple" || "red" || "yellow") {
+  if (color === "black" || color === "blue" || color === "green" || color === "orange" || color === "purple" || color === "red" || color === "yellow") {
     supportedColor = true
   } else {
     supportedColor = false
@@ -109,7 +109,7 @@ function drawColoredRectangle() {
     p.clearRect(10, 10, 100, 50);
     p.fillStyle = `${color}`;
     p.fillRect(10, 10, 100, 50);
-  } else {
+  } else if (supportedColor = false){
     p.clearRect(10, 10, 100, 50);
     alert("We do not support the given color");
   }
