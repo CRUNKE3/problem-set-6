@@ -99,21 +99,42 @@ function drawRectangle() {
 function drawColoredRectangle() {
   var p = document.getElementById("canvas3").getContext("2d");
   let color = prompt("Color:");
-  let supportedColor = false
-  if (color === "black" || color === "blue" || color === "green" || color === "orange" || color === "purple" || color === "red" || color === "yellow") {
-    supportedColor = true
-  } else {
-    supportedColor = false
-  }
-  if (supportedColor = true) {
-    p.clearRect(10, 10, 100, 50);
-    p.fillStyle = `${color}`;
+
+switch (color) {
+  case "black":
+    p.fillStyle = "black";
     p.fillRect(10, 10, 100, 50);
-  } else if (supportedColor = false){
-    p.clearRect(10, 10, 100, 50);
-    alert("We do not support the given color");
-  }
+    break;
+  case "blue":
+    p.fillStyle = "blue";
+    p.fillRect(10, 10, 100, 50);
+    break;
+  case "green":
+    p.fillStyle = "green";
+    p.fillRect(10, 10, 100, 50);
+    break;
+  case "orange":
+    p.fillStyle = "orange";
+    p.fillRect(10, 10, 100, 50);
+    break;
+  case "purple":
+    p.fillStyle = "purple";
+    p.fillRect(10, 10, 100, 50);
+    break;
+  case "yellow":
+    p.fillStyle = "yellow";
+    p.fillRect(10, 10, 100, 50);
+    break;
+  case "red":
+    p.fillStyle = "red";
+    p.fillRect(10, 10, 100, 50);
+    break;
+  default:
+    alert("This color is unsupported");
 }
+}
+
+
 /*
  * Triangle. 5 points.
  *
@@ -144,7 +165,29 @@ function drawColoredRectangle() {
  */
 
 function drawTriangle() {
+var p = document.getElementById("canvas4").getContext("2d");
+let side1 = prompt("Side 1:");
+let side2 = prompt("Side 2:");
+let side3 = prompt("Side 3:");
+let x = (10 - side2);
+let y = (10 - side1);
 
+let hypotenuse = Math.sqrt((side1*side1)+(side2*side2));
+if (Number.isInteger(hypotenuse)) {
+  p.beginPath();
+  p.moveTo(10, 10);
+  p.lineTo(10, y);
+  p.lineTo(x, y);
+  p.closePath(10, 10);
+  p.stroke();
+} else {
+  alert("That is not a valid triangle");
+}
+
+
+/* if statement that says if the hypotenuse isn't a whole number, alert that
+ *this isn't a valid triangle
+*/
 }
 
 /*
