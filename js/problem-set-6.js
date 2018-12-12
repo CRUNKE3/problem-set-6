@@ -166,28 +166,25 @@ switch (color) {
 
 function drawTriangle() {
 var p = document.getElementById("canvas4").getContext("2d");
+
 let side1 = prompt("Side 1:");
 let side2 = prompt("Side 2:");
 let side3 = prompt("Side 3:");
-let x = (10 - side2);
-let y = (10 - side1);
 
 let hypotenuse = Math.sqrt((side1*side1)+(side2*side2));
-if (Number.isInteger(hypotenuse)) {
+if (side3 == hypotenuse) {
   p.beginPath();
   p.moveTo(10, 10);
-  p.lineTo(10, y);
-  p.lineTo(x, y);
-  p.closePath(10, 10);
+  p.lineTo(10, side1);
+  p.lineTo(side2, side1);
+  p.closePath();
   p.stroke();
 } else {
   alert("That is not a valid triangle");
+
 }
 
 
-/* if statement that says if the hypotenuse isn't a whole number, alert that
- *this isn't a valid triangle
-*/
 }
 
 /*
