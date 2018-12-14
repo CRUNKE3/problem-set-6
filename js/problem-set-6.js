@@ -167,16 +167,19 @@ switch (color) {
 function drawTriangle() {
 var p = document.getElementById("canvas4").getContext("2d");
 
-let side1 = prompt("Side 1:");
-let side2 = prompt("Side 2:");
-let side3 = prompt("Side 3:");
+let side1 = Number(prompt("Side 1:")); //30
+let side2 = Number(prompt("Side 2:")); //40
+let side3 = prompt("Side 3:"); //50
+let actualSide2 = side2 + 10; //40
+let actualSide1 = side1 + 10; //50
 
-let hypotenuse = Math.sqrt((side1*side1)+(side2*side2));
+let hypotenuse = Math.sqrt((side1**2)+(side2**2));
 if (side3 == hypotenuse) {
+  p.clearRect(0, 0, 1000, 1000)
   p.beginPath();
   p.moveTo(10, 10);
-  p.lineTo(10, side1);
-  p.lineTo(side2, side1);
+  p.lineTo(10, actualSide1);
+  p.lineTo(actualSide2, actualSide1);
   p.closePath();
   p.stroke();
 } else {
@@ -207,6 +210,25 @@ if (side3 == hypotenuse) {
  */
 
 function drawSmileyFace() {
+
+var p = document.getElementById("canvas5").getContext("2d");
+
+let radiusHead = Number(prompt("Radius:"));
+let radiusEye = radiusHead*0.1;
+let radiusMouth = radiusHead*0.7;
+
+//p.arc(x coordinate, y coordinate, radius, 0?, Math.PI * 2, true if full circle?)
+
+p.clearRect(0, 0, 1000, 1000)
+p.beginPath();
+p.arc(75, 75, radiusHead, 0, Math.PI * 2, true);
+p.moveTo(110, 75)
+p.arc(75, 75, radiusMouth, 0, Math.PI, false);
+p.moveTo(65, 65);
+p.arc(60, 65, radiusEye, 0, Math.PI * 2, true);
+p.moveTo(95, 65);
+p.arc(90, 65, radiusEye, 0, Math.PI * 2, true);
+p.stroke();
 
 }
 
