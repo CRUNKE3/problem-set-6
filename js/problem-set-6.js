@@ -216,6 +216,12 @@ var p = document.getElementById("canvas5").getContext("2d");
 let radiusHead = Number(prompt("Radius:"));
 let radiusEye = radiusHead*0.1;
 let radiusMouth = radiusHead*0.7;
+let eyeY1 = radiusHead*0.3
+let eyeX1 = radiusHead*0.8
+let eyeY2 = radiusHead*
+let eyeX2 = radiusHead*
+let mouthY = radiusHead*
+let mouthX = radiusHead*
 
 //p.arc(x coordinate, y coordinate, radius, 0?, Math.PI * 2, true if full circle?)
 
