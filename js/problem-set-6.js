@@ -216,23 +216,20 @@ var p = document.getElementById("canvas5").getContext("2d");
 let radiusHead = Number(prompt("Radius:"));
 let radiusEye = radiusHead*0.1;
 let radiusMouth = radiusHead*0.7;
-let eyeY1 = radiusHead*0.3
-let eyeX1 = radiusHead*0.8
-let eyeY2 = radiusHead*
-let eyeX2 = radiusHead*
-let mouthY = radiusHead*
-let mouthX = radiusHead*
 
 //p.arc(x coordinate, y coordinate, radius, 0?, Math.PI * 2, true if full circle?)
 
 p.clearRect(0, 0, 1000, 1000)
 p.beginPath();
 p.arc(75, 75, radiusHead, 0, Math.PI * 2, true);
-p.moveTo(110, 75)
+p.stroke();
+p.beginPath()
 p.arc(75, 75, radiusMouth, 0, Math.PI, false);
-p.moveTo(65, 65);
+p.stroke();
+p.beginPath();
 p.arc(60, 65, radiusEye, 0, Math.PI * 2, true);
-p.moveTo(95, 65);
+p.stroke();
+p.beginPath();
 p.arc(90, 65, radiusEye, 0, Math.PI * 2, true);
 p.stroke();
 
@@ -277,6 +274,10 @@ function drawStar() {
 
 function drawStopSign() {
 
+var p = document.getElementById("canvas7").getContext("2d");
+
+p.beginPath();
+p.moveTo();
 }
 
 /*
@@ -332,7 +333,7 @@ function drawPyramid() {
 
 function drawHouse() {
 var p = document.getElementById("canvas9").getContext("2d");
-                                                      
+
 //big Rectangle
   let colorHouse = prompt("House Color:");
   switch (colorHouse) {
@@ -375,7 +376,7 @@ var p = document.getElementById("canvas9").getContext("2d");
     alert("This color is unsupported");
 }
   //door
-  let colorDoor = prompt("Door Color:"); 
+  let colorDoor = prompt("Door Color:");
   switch (colorDoor) {
   case "black":
     p.fillStyle = "black";
@@ -413,10 +414,11 @@ var p = document.getElementById("canvas9").getContext("2d");
     break;
   default:
     alert("This color is unsupported");
+  }
   //windows
-  
+
   //doorknob
-  
+
   //roof
-  
+
 }
