@@ -332,34 +332,72 @@ var p = document.getElementById("canvas9").getContext("2d);
   switch (colorHouse) {
   case "black":
     p.fillStyle = "black";
-    p.fillRect(150, 10, 300, canvas.width);
+    p.fillRect(150, 10, 300, canvas.height-10);
     break;
   case "blue":
     p.fillStyle = "blue";
-    p.fillRect(10, 10, 100, 50);
+    p.fillRect(150, 10, 300, canvas.height-10);
     break;
   case "green":
     p.fillStyle = "green";
-    p.fillRect(10, 10, 100, 50);
+    p.fillRect(150, 10, 300, canvas.height-10);
     break;
   case "orange":
     p.fillStyle = "orange";
-    p.fillRect(10, 10, 100, 50);
+    p.fillRect(150, 10, 300, canvas.height-10);
     break;
   case "purple":
     p.fillStyle = "purple";
-    p.fillRect(10, 10, 100, 50);
+    p.fillRect(150, 10, 300, canvas.height-10);
     break;
   case "yellow":
     p.fillStyle = "yellow";
-    p.fillRect(10, 10, 100, 50);
+    p.fillRect(150, 10, 300, canvas.height-10);
     break;
   case "red":
     p.fillStyle = "red";
-    p.fillRect(10, 10, 100, 50);
+    p.fillRect(150, 10, 300, canvas.height-10);
     break;
   default:
     alert("This color is unsupported");
 }
+  //door
   let colorDoor = prompt("Door Color:"); 
+  switch (colorDoor) {
+  case "black":
+    p.fillStyle = "black";
+    p.fillRect(125, 175, 75, 30);
+    break;
+  case "blue":
+    p.fillStyle = "blue";
+    p.fillRect(125, 175, 75, 30);
+    break;
+  case "green":
+    p.fillStyle = "green";
+    p.fillRect(125, 175, 75, 30);
+    break;
+  case "orange":
+    p.fillStyle = "orange";
+    p.fillRect(125, 175, 75, 30);
+    break;
+  case "purple":
+    p.fillStyle = "purple";
+    p.fillRect(125, 175, 75, 30);
+    break;
+  case "yellow":
+    p.fillStyle = "yellow";
+    p.fillRect(125, 175, 75, 30);
+    break;
+  case "red":
+    p.fillStyle = "red";
+    p.fillRect(125, 175, 75, 30);
+    break;
+  default:
+    alert("This color is unsupported");
+  //windows
+  
+  //doorknob
+  
+  //roof
+  
 }
