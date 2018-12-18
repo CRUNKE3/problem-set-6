@@ -325,7 +325,7 @@ function drawPyramid() {
  */
 
 function drawHouse() {
-var p = document.getElementById("canvas9").getContext("2d);
+var p = document.getElementById("canvas9").getContext("2d");
                                                       
 //big Rectangle
   let colorHouse = prompt("House Color:");
