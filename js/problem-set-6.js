@@ -277,7 +277,8 @@ function drawStopSign() {
 var p = document.getElementById("canvas7").getContext("2d");
 
 p.beginPath();
-p.moveTo();
+p.moveTo(10, 10);
+p.lineTo()
 }
 
 /*
