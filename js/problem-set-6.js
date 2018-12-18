@@ -333,30 +333,37 @@ var p = document.getElementById("canvas9").getContext("2d");
   case "black":
     p.fillStyle = "black";
     p.fillRect(150, 10, 300, canvas.height-10);
+      p.strokeRect(50, 10, 300, canvas.height-10);
     break;
   case "blue":
     p.fillStyle = "blue";
     p.fillRect(150, 10, 300, canvas.height-10);
+      p.strokeRect(50, 10, 300, canvas.height-10);
     break;
   case "green":
     p.fillStyle = "green";
     p.fillRect(150, 10, 300, canvas.height-10);
+      p.strokeRect(50, 10, 300, canvas.height-10);
     break;
   case "orange":
     p.fillStyle = "orange";
     p.fillRect(150, 10, 300, canvas.height-10);
+      p.strokeRect(50, 10, 300, canvas.height-10);
     break;
   case "purple":
     p.fillStyle = "purple";
     p.fillRect(150, 10, 300, canvas.height-10);
+      p.strokeRect(50, 10, 300, canvas.height-10);
     break;
   case "yellow":
     p.fillStyle = "yellow";
     p.fillRect(150, 10, 300, canvas.height-10);
+      p.strokeRect(50, 10, 300, canvas.height-10);
     break;
   case "red":
     p.fillStyle = "red";
     p.fillRect(150, 10, 300, canvas.height-10);
+      p.strokeRect(50, 10, 300, canvas.height-10);
     break;
   default:
     alert("This color is unsupported");
@@ -371,26 +378,32 @@ var p = document.getElementById("canvas9").getContext("2d");
   case "blue":
     p.fillStyle = "blue";
     p.fillRect(125, 175, 75, 30);
+      p.strokeRect(125, 175, 75, 30);
     break;
   case "green":
     p.fillStyle = "green";
     p.fillRect(125, 175, 75, 30);
+      p.strokeRect(125, 175, 75, 30);
     break;
   case "orange":
     p.fillStyle = "orange";
     p.fillRect(125, 175, 75, 30);
+      p.strokeRect(125, 175, 75, 30);
     break;
   case "purple":
     p.fillStyle = "purple";
     p.fillRect(125, 175, 75, 30);
+      p.strokeRect(125, 175, 75, 30);
     break;
   case "yellow":
     p.fillStyle = "yellow";
     p.fillRect(125, 175, 75, 30);
+      p.strokeRect(125, 175, 75, 30);
     break;
   case "red":
     p.fillStyle = "red";
     p.fillRect(125, 175, 75, 30);
+    p.strokeRect(125, 175, 75, 30);
     break;
   default:
     alert("This color is unsupported");
