@@ -325,5 +325,41 @@ function drawPyramid() {
  */
 
 function drawHouse() {
-
+var p = document.getElementById("canvas9").getContext("2d);
+                                                      
+//big Rectangle
+  let colorHouse = prompt("House Color:");
+  switch (colorHouse) {
+  case "black":
+    p.fillStyle = "black";
+    p.fillRect(150, 10, 300, canvas.width);
+    break;
+  case "blue":
+    p.fillStyle = "blue";
+    p.fillRect(10, 10, 100, 50);
+    break;
+  case "green":
+    p.fillStyle = "green";
+    p.fillRect(10, 10, 100, 50);
+    break;
+  case "orange":
+    p.fillStyle = "orange";
+    p.fillRect(10, 10, 100, 50);
+    break;
+  case "purple":
+    p.fillStyle = "purple";
+    p.fillRect(10, 10, 100, 50);
+    break;
+  case "yellow":
+    p.fillStyle = "yellow";
+    p.fillRect(10, 10, 100, 50);
+    break;
+  case "red":
+    p.fillStyle = "red";
+    p.fillRect(10, 10, 100, 50);
+    break;
+  default:
+    alert("This color is unsupported");
+}
+  let colorDoor = prompt("Door Color:"); 
 }
