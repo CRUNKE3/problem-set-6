@@ -254,7 +254,27 @@ p.stroke();
  */
 
 function drawStar() {
+var p = document.getElementById('canvas6').getContext('2d');
+  p.clearRect(0, 0, canvas.width, canvas.height);
+  let outer = Math.floor(Number(prompt("Outer Radius:")));
+  let inner = Math.floor(Number(prompt("Inner Radius:")));
+  if (isNaN(outer) || isNaN(inner)) {
+    alert("One of your inputs is not a number.");
+  } else if (outer <= inner) {
+    alert("Your outer radius must be larger than your inner radius.");
+  } else {
+    p.moveTo(125, 125 - outer);
+    let x = 1.5;
 
+    for (let i = 0 ; i < 5; i++) {
+      x += 0.2;
+      p.lineTo((inner * Math.cos(x * Math.PI)) + 125, (inner * Math.sin(x * Math.PI)) + 125);
+      x += 0.2;
+      p.lineTo((outer * Math.cos(x * Math.PI)) + 125, (outer * Math.sin(x * Math.PI)) + 125);
+    }
+
+    p.stroke();
+  }
 }
 
 /*
@@ -277,8 +297,24 @@ function drawStopSign() {
 var p = document.getElementById("canvas7").getContext("2d");
 
 p.beginPath();
-p.moveTo(10, 10);
-p.lineTo()
+p.moveTo(67, 10);
+p.lineTo(147, 10);
+p.lineTo(204, 67);
+p.lineTo(204, 147);
+p.lineTo(147, 204);
+p.lineTo(67, 204);
+p.lineTo(10, 147);
+p.lineTo(10, 67);
+p.lineTo(67, 10);
+p.stroke();
+p.fillStyle = "#FF0000";
+p.fill();
+p.closePath();
+
+p.font = "65px Arial";
+p.fillStyle = "white";
+p.textAlign = "center";
+p.fillText("STOP", 107, 127);
 }
 
 /*
@@ -300,7 +336,38 @@ p.lineTo()
  */
 
 function drawPyramid() {
+  var p = document.getElementById('canvas8').getContext('2d');
+  p.clearRect(0, 0, canvas.width, canvas.height);
+  let input = Math.floor(Number(prompt("Length:")));
+  if (input > 100) {
+    alert("The pyramid will not fit on the canvas.");
+  } else if (isNaN(input)) {
+    alert("Your input is not a number.");
+  }else{
 
+  let half = (input / 2);
+
+  p.strokeRect(10, (502 - input), input, input);
+  p.strokeRect((10 + input), (502 - input), input, input);
+  p.strokeRect((10 + (input * 2)), (502 - input), input, input);
+  p.strokeRect((10 + (input * 3)), (502 - input), input, input);
+  p.strokeRect((10 + (input * 4)), (502 - input), input, input);
+
+  p.strokeRect((10 + half), (502 - (input * 2)), input, input);
+  p.strokeRect((10 + (half * 3)), (502 - (input * 2)), input, input);
+  p.strokeRect((10 + (half * 5)), (502 - (input * 2)), input, input);
+  p.strokeRect((10 + (half * 7)), (502 - (input * 2)), input, input);
+
+  p.strokeRect((10 + input), (502 - (input * 3)), input, input);
+  p.strokeRect((10 + (input * 2)), (502 - (input * 3)), input, input);
+  p.strokeRect((10 + (input * 3)), (502 - (input * 3)), input, input);
+
+  p.strokeRect((10 + (half * 3)), (502 - (input * 4)), input, input);
+  p.strokeRect((10 + (half * 5)), (502 - (input * 4)), input, input);
+
+  p.strokeRect((10 + (input * 2)), (502 - (input * 5)), input, input);
+
+}
 }
 
 /*
@@ -335,91 +402,65 @@ function drawPyramid() {
 function drawHouse() {
 var p = document.getElementById("canvas9").getContext("2d");
 
-//big Rectangle
-  let colorHouse = prompt("House Color:");
-  switch (colorHouse) {
-  case "black":
-    p.fillStyle = "black";
-    p.fillRect(150, 10, 300, canvas.height-10);
-      p.strokeRect(50, 10, 300, canvas.height-10);
-    break;
-  case "blue":
-    p.fillStyle = "blue";
-    p.fillRect(150, 10, 300, canvas.height-10);
-      p.strokeRect(50, 10, 300, canvas.height-10);
-    break;
-  case "green":
-    p.fillStyle = "green";
-    p.fillRect(150, 10, 300, canvas.height-10);
-      p.strokeRect(50, 10, 300, canvas.height-10);
-    break;
-  case "orange":
-    p.fillStyle = "orange";
-    p.fillRect(150, 10, 300, canvas.height-10);
-      p.strokeRect(50, 10, 300, canvas.height-10);
-    break;
-  case "purple":
-    p.fillStyle = "purple";
-    p.fillRect(150, 10, 300, canvas.height-10);
-      p.strokeRect(50, 10, 300, canvas.height-10);
-    break;
-  case "yellow":
-    p.fillStyle = "yellow";
-    p.fillRect(150, 10, 300, canvas.height-10);
-      p.strokeRect(50, 10, 300, canvas.height-10);
-    break;
-  case "red":
-    p.fillStyle = "red";
-    p.fillRect(150, 10, 300, canvas.height-10);
-      p.strokeRect(50, 10, 300, canvas.height-10);
-    break;
-  default:
-    alert("This color is unsupported");
+p.clearRect(0, 0, canvas.width, canvas.height);
+  p.lineWidth = 2;
+
+  let colorH = prompt("House Color:");
+  let colorD = prompt("Front Door Color:");
+
+if (colorH != "blue" && colorH != "brown" && colorH != "green" && colorH != "orange" && colorH != "purple" && colorH != "red" && colorH != "yellow") {
+  alert("One of your colors is not supported.");
+} else if (colorD != "blue" && colorD != "brown" && colorD != "green" && colorD != "orange" && colorD != "purple" && colorD != "red" && colorD != "yellow") {
+  alert("One of your colors is not supported.");
+}else{
+  p.beginPath();
+  p.fillStyle = "gray";
+  p.moveTo(512, 10);
+  p.lineTo(150, 260);
+  p.lineTo(850, 260);
+  p.lineTo(512, 10);
+  p.stroke();
+  p.fill();
+  p.closePath();
+
+  p.beginPath();
+  p.fillStyle = `${colorH}`;
+  p.moveTo(150, 260);
+  p.lineTo(150, 750);
+  p.lineTo(850, 750);
+  p.lineTo(850, 260);
+  p.lineTo(150, 260);
+  p.stroke();
+  p.fill();
+  p.closePath();
+
+
+  p.fillStyle = "#ADD8E6";
+  p.strokeRect(250, 360, 75, 75);
+  p.fillRect(250, 360, 75, 75);
+
+  p.fillStyle = "#ADD8E6";
+  p.strokeRect(675, 360, 75, 75);
+  p.fillRect(675, 360, 75, 75);
+
+  p.fillStyle = "#ADD8E6";
+  p.strokeRect(250, 625, 75, 75);
+  p.fillRect(250, 625, 75, 75);
+
+  p.fillStyle = "#ADD8E6";
+  p.strokeRect(675, 625, 75, 75);
+  p.fillRect(675, 625, 75, 75);
+
+  p.fillStyle = `${colorD}`;
+  p.strokeRect(450, 600, 100, 150);
+  p.fillRect(450, 600, 100, 150);
+
+  p.beginPath();
+  p.moveTo(535, 675);
+  p.fillStyle = "orange";
+  p.arc(535, 675, 6, 0, (Math.PI * 2), false);
+  p.stroke();
+  p.fill();
+  p.closePath();
 }
-  //door
-  let colorDoor = prompt("Door Color:");
-  switch (colorDoor) {
-  case "black":
-    p.fillStyle = "black";
-    p.fillRect(125, 175, 75, 30);
-    break;
-  case "blue":
-    p.fillStyle = "blue";
-    p.fillRect(125, 175, 75, 30);
-      p.strokeRect(125, 175, 75, 30);
-    break;
-  case "green":
-    p.fillStyle = "green";
-    p.fillRect(125, 175, 75, 30);
-      p.strokeRect(125, 175, 75, 30);
-    break;
-  case "orange":
-    p.fillStyle = "orange";
-    p.fillRect(125, 175, 75, 30);
-      p.strokeRect(125, 175, 75, 30);
-    break;
-  case "purple":
-    p.fillStyle = "purple";
-    p.fillRect(125, 175, 75, 30);
-      p.strokeRect(125, 175, 75, 30);
-    break;
-  case "yellow":
-    p.fillStyle = "yellow";
-    p.fillRect(125, 175, 75, 30);
-      p.strokeRect(125, 175, 75, 30);
-    break;
-  case "red":
-    p.fillStyle = "red";
-    p.fillRect(125, 175, 75, 30);
-    p.strokeRect(125, 175, 75, 30);
-    break;
-  default:
-    alert("This color is unsupported");
-  }
-  //windows
-
-  //doorknob
-
-  //roof
-
 }
