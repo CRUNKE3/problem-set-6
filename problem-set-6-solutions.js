@@ -88,9 +88,9 @@ function drawTriangle() { //declaring the function drawTriangle()
   if (Number.isNaN(s1) || Number.isNaN(s2) || Number.isNaN(s3)) { //declaring if statement if the number of any of the variables is not a number
     alert("One of your inputs is not a number."); //an alert appears saying "One of your imputs is not a number" if one of the variables is not a number
   } else if (((s1 + s2) > s3) && ((s1 + s3) > s2) && ((s2 + s3) > s1)) { //declaring else if statement that asks whether 
-      let side1 = Math.min(s1, s2, s3);
-      let side3 = Math.max(s1, s2, s3);
-      let side2 = (s1 + s2 + s3) - side1 - side3;
+      let side1 = Math.min(s1, s2, s3); //making the variable "side1" equal the smallest value of the three variables stated before
+      let side3 = Math.max(s1, s2, s3); //making the variable "side3" equal the largest value of the three variables stated before
+      let side2 = (s1 + s2 + s3) - side1 - side3; //making the variable "side2: equal the remaining value between the three variables stated before
 
       if (((side1 * side1) + (side2 * side2)) === (side3 * side3)) {
         let x = 10;
