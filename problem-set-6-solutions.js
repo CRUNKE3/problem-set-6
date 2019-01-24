@@ -2,63 +2,63 @@
  * Hello. SOLUTION.
  */
 
-function sayHello() {
-  let c = document.getElementById("canvas1");
-  let ctx = c.getContext("2d");
+function sayHello() { //declaring the first function
+  let c = document.getElementById("canvas1"); //making the varible "c" equal canvas1
+  let ctx = c.getContext("2d"); //making the variable "ctx" allow an opening for canvas1's API
 
-  ctx.clearRect(0, 0, c.width, c.height);
-  ctx.font = "48px sans-serif";
-  ctx.strokeText("Hello, World!", 10, 50);
-}
+  ctx.clearRect(0, 0, c.width, c.height); //clearing the whole canvas when the function sayHello() is activated
+  ctx.font = "48px sans-serif"; //creating the font style to use when stroking text onto canvas1
+  ctx.strokeText("Hello, World!", 10, 50); //stroking "Hello, World!" onto canvas1 starting at the point (10, 50)
+} //end of function sayHello()
 
 /*
  * Rectangle. SOLUTION.
  */
 
-function drawRectangle() {
-  let height = Number(prompt("Height: "));
-  let width = Number(prompt("Width: "));
-  let x = Number(prompt("X: "));
-  let y = Number(prompt("Y: "));
+function drawRectangle() { //declaring function drawRectangle()
+  let height = Number(prompt("Height: ")); //making the variable "height" equal the number of whatever the user enters into the prompt (when the button is pressed, a prompt will appear saying "Height:"
+  let width = Number(prompt("Width: ")); //making the variable "width" equal the number of whatever the user enters into the prompt (when the button is pressed, a prompt will appear saying "Width:" 
+  let x = Number(prompt("X: ")); //making the variable "x" equal the number of whatever the user enters into the prompt (when the button is pressed, a prompt will appear saying "X:"
+  let y = Number(prompt("Y: ")); //making the variable "y" equal the number of whatever the user enters into the prompt (when the button is pressed, a prompt will appear saying "Y:"
 
-  let c = document.getElementById("canvas2");
-  let ctx = c.getContext("2d");
-  ctx.clearRect(0, 0, c.width, c.height);
+  let c = document.getElementById("canvas2"); //making the variable "c" equal where canvas2 is.
+  let ctx = c.getContext("2d"); //making the variable "ctx" allow an opening for canvas2's API
+  ctx.clearRect(0, 0, c.width, c.height); //clearing the whole canvas of canvas2 when button is pressed
 
-  if (Number.isNaN(height) || Number.isNaN(width) || Number.isNaN(x) || Number.isNaN(y)) {
-    alert("One of your inputs is not a number.");
-  } else if (width > 1023) {
-    alert("The rectangle will not fit on the canvas.");
-  } else if (width < 1) {
-    alert("Your width is too small.");
-  } else if (height > 511) {
-    alert("The rectangle will not fit on the canvas.");
-  } else if (height < 1) {
-    alert("Your height is too small.");
-  } else if ((width + x) > 1023) {
-    alert("The rectangle will not fit on the canvas.");
-  } else if (x < 5) {
-    alert("Your x-coordinate is too small.");
-  } else if ((height + y) > 511) {
-    alert("The rectangle will not fit on the canvas.");
-  } else if (y < 5) {
-    alert("Your y-coordinate is too small.");
-  } else {
-    ctx.strokeRect(x, y, width, height);
-  }
-}
+  if (Number.isNaN(height) || Number.isNaN(width) || Number.isNaN(x) || Number.isNaN(y)) { //declaring an if statement that asks if one of the variables is not a number
+    alert("One of your inputs is not a number."); //an alert appears saying "One of your inputs is not a number." if one of the variables (height, width, x, or y) is not a number
+  } else if (width > 1023) { //declaring else if statement that asks if the variable "width" is greater than 1023
+    alert("The rectangle will not fit on the canvas."); //an alert appears saying "The rectangle will not fit on the canvas." if "width" is greater than 1023
+  } else if (width < 1) { //declaring else if statement that asks whether the variable "width" is less that 1
+    alert("Your width is too small."); //an alert appears saying "Your width is too small." if "width" is less than 1
+  } else if (height > 511) { //declaring else if statement that asks whether the variable "height" is greater than 511
+    alert("The rectangle will not fit on the canvas."); //an alert appears saying "The rectangle will not fit in the canvas" if "height" is greater than 511
+  } else if (height < 1) { //declaring else if statement that asks whether the variable "height" is less than 1
+    alert("Your height is too small."); //an alert appears saying "Your height is too small." if "height" is less than 1
+  } else if ((width + x) > 1023) { //declaring else if statement that asks whether "width" plus the variable "x" is greater than 1023
+    alert("The rectangle will not fit on the canvas."); //alert appears saying "The rectangle will not fit in the canvas." if "width" plus "x" is greater than 1023
+  } else if (x < 5) { //declaring else if statement asking whether the variable "x" is less than 5
+    alert("Your x-coordinate is too small."); //an alert appears saying "Your x-coordinate is too small." if "x" is less than 5
+  } else if ((height + y) > 511) { //declaring else if statement that asks whether "height" plus "y" is greater than 511
+    alert("The rectangle will not fit on the canvas."); //an alert appears saying "the rectangle will not fit on the canvas." if "height" plus "y" is greater than 511
+  } else if (y < 5) { //declaring else if statement that asks whether the variable "y" is less than 5
+    alert("Your y-coordinate is too small."); //an alert appears saying "Your y-coordinate is too small" if "y" is less than 5
+  } else { //declaring else statment if the variables don't apply to any of the if statements above (if the variables comply with restriction)
+    ctx.strokeRect(x, y, width, height); //strokes the rectangle at the given points the user entered in each prompt as the default if non of the if statements are true
+  } //end of else statement
+} //end of function drawRectangle();
 
 /*
  * Color. SOLUTION.
  */
 
-function drawColoredRectangle() {
-  let c = document.getElementById("canvas3");
-  let ctx = c.getContext("2d");
-  ctx.clearRect(0, 0, c.width, c.height);
+function drawColoredRectangle() { //declaring function drawColoredRectangle()
+  let c = document.getElementById("canvas3"); //making the variable "c" equal where canvas3 is
+  let ctx = c.getContext("2d");//making the variable "ctx" allow an opening for canvas3's API
+  ctx.clearRect(0, 0, c.width, c.height); //clearing the whole canvas of canvas3 when button is pushed. 
 
-  let color = prompt("Color: ");
-  if (color === "black"  ||
+  let color = prompt("Color: "); //prompts the user to enter a color and will store the entry into the variable "color"
+  if (color === "black"  || //declaring if statement on whether the variable "color" equals any of the values
       color === "blue"   ||
       color === "green"  ||
       color === "orange" ||
@@ -66,29 +66,28 @@ function drawColoredRectangle() {
       color === "red"    ||
       color === "yellow") {
 
-    ctx.fillStyle = color;
-    ctx.fillRect(10, 10, 100, 50);
-  } else {
-    alert(color + " is not a supported color.");
-  }
-}
+    ctx.fillStyle = color; //creates the fill style of the drawn rectangle to be the color stored in the variable "color"
+    ctx.fillRect(10, 10, 100, 50); //draws the given rectangle with a width of 100 and a height of 50 at (10, 10) with the fill style written above
+  } else { //declaring else statement if the variable "color" does not equal any of the values
+    alert(color + " is not a supported color."); //alert appears saying whether or not the color you entered was on the list
+  }//end of else statement
+}//end of function drawColoredRectangle()
 
 /*
  * Triangle. SOLUTION.
  */
 
-function drawTriangle() {
-  let c = document.getElementById("canvas4");
-  let ctx = c.getContext("2d");
-  ctx.clearRect(0, 0, c.width, c.height);
+function drawTriangle() { //declaring the function drawTriangle()
+  let c = document.getElementById("canvas4"); //making the variable "c" equal where canvas 4 is
+  let ctx = c.getContext("2d"); //making the variable "ctx" allow an opening for canvas4's API
 
-  let s1 = Number(prompt("Side 1: "));
-  let s2 = Number(prompt("Side 2: "));
-  let s3 = Number(prompt("Side 3: "));
+  let s1 = Number(prompt("Side 1: ")); //making the variable "s1" equal the number of whatever the user enters into the prompt
+  let s2 = Number(prompt("Side 2: "));//making the variable "s2" equal the number of whatever the user enters into the prompt
+  let s3 = Number(prompt("Side 3: "));//making the variable "s3" equal the number of whatever the user enters into the prompt
 
-  if (Number.isNaN(s1) || Number.isNaN(s2) || Number.isNaN(s3)) {
-    alert("One of your inputs is not a number.");
-  } else if (((s1 + s2) > s3) && ((s1 + s3) > s2) && ((s2 + s3) > s1)) {
+  if (Number.isNaN(s1) || Number.isNaN(s2) || Number.isNaN(s3)) { //declaring if statement if the number of any of the variables is not a number
+    alert("One of your inputs is not a number."); //an alert appears saying "One of your imputs is not a number" if one of the variables is not a number
+  } else if (((s1 + s2) > s3) && ((s1 + s3) > s2) && ((s2 + s3) > s1)) { //declaring else if statement that asks whether 
       let side1 = Math.min(s1, s2, s3);
       let side3 = Math.max(s1, s2, s3);
       let side2 = (s1 + s2 + s3) - side1 - side3;
