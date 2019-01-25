@@ -92,79 +92,79 @@ function drawTriangle() { //declaring the function drawTriangle()
       let side3 = Math.max(s1, s2, s3); //making the variable "side3" equal the largest value of the three variables stated before
       let side2 = (s1 + s2 + s3) - side1 - side3; //making the variable "side2: equal the remaining value between the three variables stated before
 
-      if (((side1 * side1) + (side2 * side2)) === (side3 * side3)) {
-        let x = 10;
-        let y = 10;
+      if (((side1 * side1) + (side2 * side2)) === (side3 * side3)) { //declaring if statement if the value of side1^2 plus side2^2 is equal to side3^2 (basically its the pythagorean theorem)
+        let x = 10; //making the variable "x" equal 10
+        let y = 10; //making the variable "y" equal 10
 
-        if ((y + side1) > 511 || (x + side2) > 1023) {
-          alert("The triangle will not fit on the canvas.");
-        } else {
-          ctx.beginPath();
+        if ((y + side1) > 511 || (x + side2) > 1023) { //declaring if statement if the value of y plus the value of side1 is greater than 511, or if the value of x plus the value of side2 is greater than 1023
+          alert("The triangle will not fit on the canvas."); //alert appears saying "The triangle will not fit on the canvas." if y+side1 is greater than 511 or if x+side2 is greater than 1023
+        } else { //now referring to the default (if the if statement is false)
+          ctx.beginPath(); //starts beginning to draw a path on canvas4
 
-          ctx.moveTo(x, y);
-          ctx.lineTo(x, y + side1);
-          ctx.lineTo(x + side2, y + side1);
-          ctx.lineTo(x, y);
+          ctx.moveTo(x, y); //states where the start to the first path in canvas4 (x and y are 10 so it the triangle will start being drawn from poitn (10, 10)
+          ctx.lineTo(x, y + side1); //draws a line to the point (10, 10+the value of side1)
+          ctx.lineTo(x + side2 y + side1); //draws another line to the point (10+the value of side2, 0+the value of side1)
+          ctx.lineTo(x, y); //draws another line to the starting point (10, 10)
 
-          ctx.closePath();
-          ctx.stroke();
+          ctx.closePath(); //closes the path so no more lines will be drawn
+          ctx.stroke(); //strokes whatever was drawn on canvas4
         }
       } else {
-        alert("This is not a valid right triangle.");
+        alert("This is not a valid right triangle."); //alert appears saying "This is not a valid right triangle." if (((side1 * side1) + (side2 * side2)) !== (side3 * side3)
       }
   } else {
-    alert("That is not a valid right triangle.");
+    alert("That is not a valid right triangle.");//alert appears saying "This is not a valid right triangle." if Number.isNaN(s1) || Number.isNaN(s2) || Number.isNaN(s3) is false
   }
-}
+} // end of function drawTriangle()
 
 /*
  * Smile. SOLUTION.
  */
 
-function drawSmileyFace() {
-  let c = document.getElementById("canvas5");
-  let ctx = c.getContext("2d");
-  ctx.clearRect(0, 0, c.width, c.height);
+function drawSmileyFace() { //declaring function drawSmileyFace()
+  let c = document.getElementById("canvas5");//making the variable "c" equal where canvas 5 is
+  let ctx = c.getContext("2d"); //making the variable "ctx" allow an opening for canvas5s API
+  ctx.clearRect(0, 0, c.width, c.height); //clears the whole canvas
 
-  let radius = Number(prompt("Radius: "));
+  let radius = Number(prompt("Radius: ")); //prompts the user "Radius:" and the value is stored in the variable "radius"
 
-  if (Number.isNaN(radius)) {
-    alert("Your input is not a number.");
-  } else if (radius < 1) {
-    alert("Your radius is too small.");
-  } else if ((radius * 2 + 10) > 511) {
-    alert("The smiley face will not fit on the canvas.");
-  } else {
-    let faceX = radius + 10;
-    let faceY = radius + 10;
+  if (Number.isNaN(radius)) { //declares if statement that asks if the value of "radius" is not a number. 
+    alert("Your input is not a number."); //an alert appears saying "Your input is not a number" if the value of "radius" is not a number
+  } else if (radius < 1) { //asks if the value of "radius is less than 1
+    alert("Your radius is too small."); //alert appears saying "your radius is too small." if the value of "radius" is less than 1
+  } else if ((radius * 2 + 10) > 511) { //asks if radius*2+10 is greater than 511
+    alert("The smiley face will not fit on the canvas."); //alert appears saying "The smiley face will not fit on the canvas." if radius*2+10 is greater than 511
+  } else { //run the code below if the other if statements are false
+    let faceX = radius + 10; //makes the variable of "faceX" equal the value of "radius" plus 10
+    let faceY = radius + 10; //makes the variable of "faceY" equal the value of "radius" plus 10
 
-    ctx.beginPath();
+    ctx.beginPath(); //starts to begin the path in canvas5
 
-    ctx.arc(faceX, faceY, radius, 0, Math.PI * 2, true);  // draw the face
-    ctx.moveTo(faceX + radius - radius * 0.3, faceY);
+    ctx.arc(faceX, faceY, radius, 0, Math.PI * 2, true);  // draw the face (the outer circle) using the values faceX, faceY, radius, and pi^2
+    ctx.moveTo(faceX + radius - radius * 0.3, faceY); //moves to the next starting position
     ctx.arc(faceX, faceY, radius * 0.7, 0, Math.PI, false); // draw the mouth
-    ctx.moveTo(faceX - radius * 0.35 + radius * 0.1, faceY - radius * 0.5);
+    ctx.moveTo(faceX - radius * 0.35 + radius * 0.1, faceY - radius * 0.5); //moves to the next starting position
     ctx.arc(faceX - radius * 0.35, faceY - radius * 0.5, radius * 0.1, 0, Math.PI * 2, true); // left eye
-    ctx.moveTo(faceX + radius * 0.35 + radius * 0.1, faceY - radius * 0.5);
+    ctx.moveTo(faceX + radius * 0.35 + radius * 0.1, faceY - radius * 0.5); //moves to the next starting position
     ctx.arc(faceX + radius * 0.35, faceY - radius * 0.5, radius * 0.1, 0, Math.PI * 2, true);  // right eye
 
-    ctx.closePath();
-    ctx.stroke();
+    ctx.closePath(); //ends the paths to be made and lines and arcs to be drawn
+    ctx.stroke(); //strokes the arcs onto canvas 5
   }
-}
+} //end of function drawSmileyFace()
 
 /*
  * Star. SOLUTION.
  */
 
-function drawStar() {
-  let c = document.getElementById("canvas6");
-  let ctx = c.getContext("2d");
-  ctx.clearRect(0, 0, c.width, c.height);
+function drawStar() { //declaring function drawStar()
+  let c = document.getElementById("canvas6"); //making the variable "c" equal where canvas 5 is.
+  let ctx = c.getContext("2d"); //making the variable "ctx" allow an opening for canvas6's API
+  ctx.clearRect(0, 0, c.width, c.height); //clears the whole canvas
 
-  let pts = 5;
-  let x = 125;
-  let y = 125;
+  let pts = 5; //makes the variable "pts" equal 5
+  let x = 125; //makes the variable "x" equal 125
+  let y = 125; //makes the variable "y" equal 125
 
   let outer = Number(prompt("Outer Radius: "));
   let inner = Number(prompt("Inner Radius: "));
