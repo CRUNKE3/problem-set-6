@@ -158,7 +158,7 @@ function drawSmileyFace() { //declaring function drawSmileyFace()
  */
 
 function drawStar() { //declaring function drawStar()
-  let c = document.getElementById("canvas6"); //making the variable "c" equal where canvas 5 is.
+  let c = document.getElementById("canvas6"); //making the variable "c" equal where canvas 6 is.
   let ctx = c.getContext("2d"); //making the variable "ctx" allow an opening for canvas6's API
   ctx.clearRect(0, 0, c.width, c.height); //clears the whole canvas
 
@@ -166,92 +166,92 @@ function drawStar() { //declaring function drawStar()
   let x = 125; //makes the variable "x" equal 125
   let y = 125; //makes the variable "y" equal 125
 
-  let outer = Number(prompt("Outer Radius: "));
-  let inner = Number(prompt("Inner Radius: "));
+  let outer = Number(prompt("Outer Radius: ")); //prompts the user saying "Outer Radius:" and stores the value into the variable "outer"
+  let inner = Number(prompt("Inner Radius: ")); //prompts the user saying "Inner Radius:" and stores the value into the variable "inner"
 
-  if (Number.isNaN(outer) || Number.isNaN(inner)) {
-    alert("One of your inputs is not a number.");
-  } else if (outer < 2) {
-    alert("Your outer radius is too small.");
-  } else if (inner < 1) {
-    alert("Your inner radius is too small.");
-  } else if (outer <= inner) {
-    alert("Your outer radius must be larger than your inner radius.");
-  } else {
-    ctx.beginPath();
+  if (Number.isNaN(outer) || Number.isNaN(inner)) { //declares if statement asking if the value of the variables outer or inner is not a number
+    alert("One of your inputs is not a number."); //alert appears saying "One of your inputs is not a number" if either variable's value is not a number
+  } else if (outer < 2) { //asks if the value of the variable "outer" is less than 2
+    alert("Your outer radius is too small."); //alert appears saying "Your outer radius is too small." if the value of the variable "outer" is less than 2
+  } else if (inner < 1) { //asks if the value of the variable "inner" is less than 1
+    alert("Your inner radius is too small.");//alert appears saying "Your inner radius is too small." if the value of the variable "inner" is less than 1
+  } else if (outer <= inner) { //asks if the value of the variable "outer" is less than or equal to the value of the variable of "inner"
+    alert("Your outer radius must be larger than your inner radius."); //alert appears saying "Your outer radius must be larger than your inner radius." if the value of the variable "outer" is less than or equal to the value of the variable of "inner"
+  } else { //runs code below if the other if statements are false
+    ctx.beginPath(); //starts paths in canvas 6
 
-    for (let vtx = 0; vtx <= 2 * pts; vtx++) {
-      let angle = vtx * Math.PI / pts - Math.PI / 2;
+    for (let vtx = 0; vtx <= 2 * pts; vtx++) { //(makes the variable "vtx" equal 0; if the value of vtx is less than or equal to the product of 2 and the variable pts, then run the code below; add 1 to the value of the variable "vtx" and re run the restrictions of the for loop;
+      let angle = vtx * Math.PI / pts - Math.PI / 2; //makes the variable "angle" equal the prodcut of the value of "vtx" and pi divided by the value of "pts" minus the product of pi and 2. 
 
-      let radius;
-      if (vtx % 2 == 0) {
-        radius = outer;
-      } else {
-        radius = inner;
+      let radius; //creates the variable "radius" (has no value given to it)
+      if (vtx % 2 == 0) { //asks if the remainder of the value of "vtx" divided by 2 is equal to 0. 
+        radius = outer; //makes the value of radius equal the value of "outer" if the remainder of the value of "vtx" divided by 2 is equal to 0. 
+      } else { //runs code below if the if statement above is false
+        radius = inner; //makes the value of radius equal the value of "inner"
       }
 
-      ctx.lineTo(x + radius * Math.cos(angle), y + radius * Math.sin(angle));
+      ctx.lineTo(x + radius * Math.cos(angle), y + radius * Math.sin(angle)); //makes a line going to the point (125+ the value of "radius" * Math.cos(angle), 125 + the value of "radius" * Math.sin(angle))
     }
 
-    ctx.closePath();
-    ctx.stroke();
+    ctx.closePath(); //ends the paths to be created in the drawing
+    ctx.stroke(); //draws the paths created onto canvas 6. 
   }
-}
+} //end of function drawStar()
 
 /*
  * Stop Sign. SOLUTION.
  */
 
-function drawStopSign() {
-  let c = document.getElementById("canvas7");
-  let ctx = c.getContext("2d");
-  ctx.clearRect(0, 0, c.width, c.height);
+function drawStopSign() { //declares function drawStopSign(); 
+  let c = document.getElementById("canvas7"); //making the variable "c" equal where canvas 7 is.
+  let ctx = c.getContext("2d");//making the variable "ctx" allow an opening for canvas7's API
+  ctx.clearRect(0, 0, c.width, c.height); //clears the whole canvas of canvas 7
 
-  let x = 10;
-  let y = 150;
-  let length = 80;
+  let x = 10; //makes the variable "x" equal 10
+  let y = 150; //makes the variable "y" equal 150
+  let length = 80; //makes the variable "length" equal 80
 
-  ctx.beginPath();
+  ctx.beginPath(); //starts drawing the path in canvas 7
 
-  ctx.moveTo(x, y);
-  y = y - length;
-  ctx.lineTo(x, y);
+  ctx.moveTo(x, y); //moves the starting point of the drawing equal (10, 150) (x and y are preset to these numbers)
+  y = y - length; //changes the value of "y" to equal the difference of its value and the value of "length"
+  ctx.lineTo(x, y); // draws a line from starting point to the new point of x and y (10, 70)
 
-  let angle = 315.0;
-  for (let i = 0; i < 7; i++) {
-    x = x + length * Math.cos(Math.PI * angle / 180.0);
-    y = y + length * Math.sin(Math.PI * angle / 180.0);
-    ctx.lineTo(x, y);
+  let angle = 315.0; //makes the variable "angle" equal 315.0
+  for (let i = 0; i < 7; i++) { //makes the value of "i" equal 0; if the value of i is less than 7, run the code below; after running the code add 1 to the value of i; then check again to see if the value of i still complies with restrictions of for loop;
+    x = x + length * Math.cos(Math.PI * angle / 180.0); //changes the value of x to equal its orginal value plus the product of the value of length and the product of Math.cos(pi * the value of angle divided by 180
+    y = y + length * Math.sin(Math.PI * angle / 180.0); //changes the value of y to equal its orginal value plus the product of the value of length and the product of Math.cos(pi * the value of angle divided by 180
+    ctx.lineTo(x, y); //draws a line to the values of x and y
 
-    angle = angle + 45.0;
-    if (angle > 359.0) {
-      angle = angle - 360.0;
+    angle = angle + 45.0; //the value of angle changes to be the sum of its original value and 45
+    if (angle > 359.0) { //asks if the valueo of the variable "angle" is greater than 359.0
+      angle = angle - 360.0; //makes the value of angle equal the difference between the original value of "angle" and 360.0
     }
   }
 
-  ctx.fillStyle = "red";
-  ctx.closePath();
-  ctx.fill();
+  ctx.fillStyle = "red"; //makes the fill style equal the color red
+  ctx.closePath(); //ends the path of the figure in canvas 7
+  ctx.fill(); //fills the figure with the fill style of the color red
 
-  ctx.fillStyle = "white";
-  ctx.font = "65px sans-serif";
-  ctx.fillText("STOP", 18, 135);
-}
+  ctx.fillStyle = "white"; //changes the fill style to equal the color white
+  ctx.font = "65px sans-serif"; //makes the font of the any text going to be drawn on canvas 7 to be 65px and sans-serif
+  ctx.fillText("STOP", 18, 135); //starts to write the text "STOP" at point (18, 135) and fills it with the preset fill style of the color white
+} //end of function drawStopSign()
 
 /*
  * Pyramid. SOLUTION.
  */
 
-function drawPyramid() {
-  let c = document.getElementById("canvas8");
-  let ctx = c.getContext("2d");
-  ctx.clearRect(0, 0, c.width, c.height);
+function drawPyramid() { //declares function drawPyramid()
+  let c = document.getElementById("canvas8");//making the variable "c" equal where canvas 8 is.
+  let ctx = c.getContext("2d");//making the variable "ctx" allow an opening for canvas8's API
+  ctx.clearRect(0, 0, c.width, c.height);//clears the whole canvas of canvas 8
 
-  let length = Number(prompt("Length: "));
+  let length = Number(prompt("Length: ")); //prompts the user saying "Length: " and stores what the user entered in the prompt to the variable "length"
 
-  if (Number.isNaN(length)) {
-    alert("Your input is not a number.");
-  } else if ((length * 5 + 10) > 1023 || (length * 5 + 10) > 511) {
+  if (Number.isNaN(length)) { //asks if the number value of the variable "length" is not a number
+    alert("Your input is not a number."); //alert appears saying "Your input is not a number." if the number value of the variable "length" is not a number
+  } else if ((length * 5 + 10) > 1023 || (length * 5 + 10) > 511) { //asks if the product of the value of length and 5 plus 10 is greater than 1023 or if the product of the value of length and 5 plus 10 is greater than 511
     alert("The pyramid will not fit on the canvas.");
   } else {
     let x = 10;
@@ -275,13 +275,13 @@ function drawPyramid() {
  * House. SOLUTION.
  */
 
-function drawHouse() {
-  let c = document.getElementById("canvas9");
-  let ctx = c.getContext("2d");
-  ctx.clearRect(0, 0, c.width, c.height);
+function drawHouse() { //declares the function drawHouse() 
+  let c = document.getElementById("canvas9"); //making the variable "c" equal where canvas 9 is.
+  let ctx = c.getContext("2d"); //making the variable "ctx" allow an opening for canvas9's API
+  ctx.clearRect(0, 0, c.width, c.height);//clears the whole canvas of canvas 9
 
-  let house = prompt("House Color: ");
-  let door = prompt("Front Door Color: ");
+  let house = prompt("House Color: "); //prompts the user saying "House Color: " and stores the value the user enters into the variable "house"
+  let door = prompt("Front Door Color: ");//prompts the user saying "Front Door Color: " and stores the value the user enters into the variable "house"
 
   if ((house !== "blue"   &&
        house !== "brown"  &&
@@ -296,19 +296,19 @@ function drawHouse() {
        door !== "orange" &&
        door !== "purple" &&
        door !== "red"    &&
-       door !== "yellow")) {
+       door !== "yellow")) { //asks if the value of "house" or "door" is not equal to all of colors listed
 
-    alert("One of your colors is not supported.");
-  } else {
-    let width = c.width - 300;
-    let height = (c.height / 5) * 3;
-    let x = 150;
-    let y = c.height - 10 - height;
+    alert("One of your colors is not supported."); //alert appears saying "One of your colors is not supported" if the values of "house" or "door' is not equal to all of the colors listed
+  } else { //runs code below if the if statement above is false 
+    let width = c.width - 300; //make the variable of "width" equal the difference of the width of canvas 9 and 300. 
+    let height = (c.height / 5) * 3; //makes the variable of "height" equal the quotient of the height canvas 9 and 5. 
+    let x = 150; //makes the variable "x" equal 150
+    let y = c.height - 10 - height; //makes the variable of "y" equal the difference of the height of canvas 9, 10, and the value of "height"
 
     // draw the frame
-    ctx.fillStyle = house;
-    ctx.fillRect(x, y, width, height);
-    ctx.strokeRect(x, y, width, height);
+    ctx.fillStyle = house; //make the fill style of the frame of the house equal what the user entered in the prompt before
+    ctx.fillRect(x, y, width, height); //starts the filling at point (150, c.height - 10 - height) with the size equal the values of the variables "width" and "height" 
+    ctx.strokeRect(x, y, width, height); //actually draws the rectangle onto canvas 9
 
     // draw the roof
     ctx.beginPath();
