@@ -252,24 +252,24 @@ function drawPyramid() { //declares function drawPyramid()
   if (Number.isNaN(length)) { //asks if the number value of the variable "length" is not a number
     alert("Your input is not a number."); //alert appears saying "Your input is not a number." if the number value of the variable "length" is not a number
   } else if ((length * 5 + 10) > 1023 || (length * 5 + 10) > 511) { //asks if the product of the value of length and 5 plus 10 is greater than 1023 or if the product of the value of length and 5 plus 10 is greater than 511
-    alert("The pyramid will not fit on the canvas.");
-  } else {
-    let x = 10;
-    let y = c.height - 10 - length;
+    alert("The pyramid will not fit on the canvas."); //alert appears saying "The pyramid will not fit on the canvas." if the product of the value of length and 5 plus 10 is greater than 1023 or if the product of the value of length and 5 plus 10 is greater than 511
+  } else { //runs code below if the if statements above are false
+    let x = 10; //makes the variable "x" equal 10;
+    let y = c.height - 10 - length; //makes the variable "y" equal the height of canvas 8 - 10 - the value of length
 
-    let offset = 0;
-    for (let n = 0; n < 5; n++) {
-      for (let o = 0; o < 5 - n; o++) {
-        ctx.strokeRect(x + offset, y, length, length);
-        offset = offset + length;
+    let offset = 0; //makes the variable "offset" equal 0
+    for (let n = 0; n < 5; n++) { //makes the value of "n" equal 0; if the value of n is less than 5, run the code below; after running the code add 1 to the value of n; then check again to see if the value of n still complies with the restrictions of the for loop
+      for (let o = 0; o < 5 - n; o++) { //makes the value of "o" equal 0; if the value of o is less than 5 minus the value of n, run the code below; after running the code add 1 to the value of o; then check again to see if the value of o still complies with the restriction of the for loop
+        ctx.strokeRect(x + offset, y, length, length); //
+        offset = offset + length; //makes the value of offset equal the original value of the variable "offset" plus the value of length
       }
 
-      x = x + Math.floor(length / 2);
-      y = y - length;
-      offset = 0;
+      x = x + Math.floor(length / 2); //
+      y = y - length; //makes the value of y equal the original value of y minus the value of length
+      offset = 0; //changes the value of "offset" to equal 0 again
     }
   }
-}
+} //end of the function drawPyramid()
 
 /*
  * House. SOLUTION.
@@ -311,22 +311,22 @@ function drawHouse() { //declares the function drawHouse()
     ctx.strokeRect(x, y, width, height); //actually draws the rectangle onto canvas 9
 
     // draw the roof
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(c.width / 2, 10);
-    ctx.lineTo(c.width - 150, y);
-    ctx.lineTo(x, y);
-    ctx.fillStyle = "gray";
-    ctx.fill();
-    ctx.moveTo(x, y);
-    ctx.lineTo(c.width / 2, 10);
-    ctx.lineTo(c.width - 150, y);
+    ctx.beginPath(); //starts another path in canvas 9
+    ctx.moveTo(x, y); //moves to the point in which starts drawing the figure allowing lines to be drawn
+    ctx.lineTo(c.width / 2, 10); //makes a line from the starting to the point (c.width / 2, 10)
+    ctx.lineTo(c.width - 150, y); //makes a line from (c.width / 2, 10) to (c.width - 150, y)
+    ctx.lineTo(x, y); //makes a line from (c.width - 150, y) to (x, y)
+    ctx.fillStyle = "gray"; //makes the fillstyle of the figure gray
+    ctx.fill(); //fills the fgure with the fill style 
+    ctx.moveTo(x, y); //moves the starting point of the figure being drawn to (x, y)
+    ctx.lineTo(c.width / 2, 10); //draws a line from the new starting point to (c.width / 2, 10)
+    ctx.lineTo(c.width - 150, y); //draws a line from (c.width / 2, 10) to (c.width - 150, y)
     // ctx.lineTo(x, y);
-    ctx.closePath();
-    ctx.stroke();
+    ctx.closePath(); //ends any paths being drawn
+    ctx.stroke(); //strokes the lines drawn onto the canvas
 
     // draw the door
-    ctx.fillStyle = "gold";
+    ctx.fillStyle = "gold"; //
     ctx.fillRect(c.width / 2 - 50, (c.height / 5) * 4 - 9, 100, 150);
     ctx.beginPath();
     ctx.moveTo(c.width / 2 - 50, (c.height / 5) * 4 - 9);
