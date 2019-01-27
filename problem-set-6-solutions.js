@@ -260,11 +260,11 @@ function drawPyramid() { //declares function drawPyramid()
     let offset = 0; //makes the variable "offset" equal 0
     for (let n = 0; n < 5; n++) { //makes the value of "n" equal 0; if the value of n is less than 5, run the code below; after running the code add 1 to the value of n; then check again to see if the value of n still complies with the restrictions of the for loop
       for (let o = 0; o < 5 - n; o++) { //makes the value of "o" equal 0; if the value of o is less than 5 minus the value of n, run the code below; after running the code add 1 to the value of o; then check again to see if the value of o still complies with the restriction of the for loop
-        ctx.strokeRect(x + offset, y, length, length); //
+        ctx.strokeRect(x + offset, y, length, length); //stroke the lines drawn onto canvas 8 starting at the point (x + offset, y) with a width and height of the value of the variable "length"
         offset = offset + length; //makes the value of offset equal the original value of the variable "offset" plus the value of length
       }
 
-      x = x + Math.floor(length / 2); //
+      x = x + Math.floor(length / 2); //make the variable of "x" equal the original value of x plus the rounded down quotient of the value of length and 2. 
       y = y - length; //makes the value of y equal the original value of y minus the value of length
       offset = 0; //changes the value of "offset" to equal 0 again
     }
@@ -323,40 +323,40 @@ function drawHouse() { //declares the function drawHouse()
     ctx.lineTo(c.width - 150, y); //draws a line from (c.width / 2, 10) to (c.width - 150, y)
     // ctx.lineTo(x, y);
     ctx.closePath(); //ends any paths being drawn
-    ctx.stroke(); //strokes the lines drawn onto the canvas
+    ctx.stroke(); //strokes the lines drawn onto canvas 9
 
     // draw the door
-    ctx.fillStyle = "gold"; //
-    ctx.fillRect(c.width / 2 - 50, (c.height / 5) * 4 - 9, 100, 150);
-    ctx.beginPath();
-    ctx.moveTo(c.width / 2 - 50, (c.height / 5) * 4 - 9);
-    ctx.lineTo(c.width / 2 + 50, (c.height / 5) * 4 - 9);
-    ctx.lineTo(c.width / 2 + 50, c.height - 10);
-    ctx.lineTo(c.width / 2 - 50, c.height - 10);
-    ctx.lineTo(c.width / 2 - 50, (c.height / 5) * 4 - 9);
-    ctx.moveTo(c.width / 2 + 42, (c.height / 5) * 4 - 9 + 80);
+    ctx.fillStyle = "gold"; //makes the fill style the color gold when fill in the stroked figure
+    ctx.fillRect(c.width / 2 - 50, (c.height / 5) * 4 - 9, 100, 150); //fills the drawn figure with the fill style set above
+    ctx.beginPath(); //start to begin another path
+    ctx.moveTo(c.width / 2 - 50, (c.height / 5) * 4 - 9); //moves to the point (c.width / 2 - 50, (c.height / 5) * 4 - 9)
+    ctx.lineTo(c.width / 2 + 50, (c.height / 5) * 4 - 9); //draws a line from (c.width / 2 - 50, (c.height / 5) * 4 - 9) to (c.width / 2 + 50, (c.height / 5) * 4 - 9)
+    ctx.lineTo(c.width / 2 + 50, c.height - 10);//draws a line from (c.width / 2 + 50, (c.height / 5) * 4 - 9) to (c.width / 2 + 50, c.height - 10)
+    ctx.lineTo(c.width / 2 - 50, c.height - 10);//draws a line from (c.width / 2 + 50, c.height - 10) to (c.width / 2 - 50, c.height - 10)
+    ctx.lineTo(c.width / 2 - 50, (c.height / 5) * 4 - 9);//draws a line from (c.width / 2 - 50, c.height - 10) to (c.width / 2 - 50, (c.height / 5) * 4 - 9)
+    ctx.moveTo(c.width / 2 + 42, (c.height / 5) * 4 - 9 + 80);//moves to the point (c.width / 2 + 42, (c.height / 5) * 4 - 9 + 80)
     ctx.arc(c.width / 2 + 35, (c.height / 5) * 4 - 9 + 80, 7, 0, Math.PI * 2, true);
-    ctx.fillStyle = door;
-    ctx.fill();
-    ctx.moveTo(c.width / 2 - 50, (c.height / 5) * 4 - 9);
-    ctx.lineTo(c.width / 2 + 50, (c.height / 5) * 4 - 9);
-    ctx.lineTo(c.width / 2 + 50, c.height - 10);
-    ctx.lineTo(c.width / 2 - 50, c.height - 10);
-    ctx.lineTo(c.width / 2 - 50, (c.height / 5) * 4 - 9);
-    ctx.moveTo(c.width / 2 + 42, (c.height / 5) * 4 - 9 + 80);
+    ctx.fillStyle = door;//makes the fill style the value of the variable "door" 
+    ctx.fill(); //fills the drawn figure with the fill style set above
+    ctx.moveTo(c.width / 2 - 50, (c.height / 5) * 4 - 9);//moves to the point (c.width / 2 - 50, (c.height / 5) * 4 - 9)
+    ctx.lineTo(c.width / 2 + 50, (c.height / 5) * 4 - 9);//draws a line from (c.width / 2 - 50, (c.height / 5) * 4 - 9) to (c.width / 2 + 50, (c.height / 5) * 4 - 9)
+    ctx.lineTo(c.width / 2 + 50, c.height - 10);//draws a line from (c.width / 2 + 50, (c.height / 5) * 4 - 9) to (c.width / 2 + 50, c.height - 10)
+    ctx.lineTo(c.width / 2 - 50, c.height - 10);//draws a line from (c.width / 2 + 50, c.height - 10) to (c.width / 2 - 50, c.height - 10)
+    ctx.lineTo(c.width / 2 - 50, (c.height / 5) * 4 - 9);//draws a line from (c.width / 2 - 50, c.height - 10) to (c.width / 2 - 50, (c.height / 5) * 4 - 9)
+    ctx.moveTo(c.width / 2 + 42, (c.height / 5) * 4 - 9 + 80);//moves to the point (c.width / 2 + 42, (c.height / 5) * 4 - 9 + 80)
     ctx.arc(c.width / 2 + 35, (c.height / 5) * 4 - 9 + 80, 7, 0, Math.PI * 2, true);
-    ctx.stroke();
+    ctx.stroke();//fills the drawn figure with the fill style set above
 
     // draw windows
-    ctx.fillStyle = "lightBlue";
-    ctx.fillRect(150 + 120, (c.height / 5) * 4 - 9 + 35, 80, 80);
-    ctx.fillRect(c.width - 150 - 80 - 120, (c.height / 5) * 4 - 9 + 35, 80, 80);
-    ctx.fillRect(150 + 120, (c.height / 5) * 2.5, 80, 80);
-    ctx.fillRect(c.width - 150 - 80 - 120, (c.height / 5) * 2.5, 80, 80);
+    ctx.fillStyle = "lightBlue";//makes the fill style
+    ctx.fillRect(150 + 120, (c.height / 5) * 4 - 9 + 35, 80, 80);//fills the drawn figure with the fill style set above
+    ctx.fillRect(c.width - 150 - 80 - 120, (c.height / 5) * 4 - 9 + 35, 80, 80);//fills the drawn figure with the fill style set above
+    ctx.fillRect(150 + 120, (c.height / 5) * 2.5, 80, 80);//fills the drawn figure with the fill style set above
+    ctx.fillRect(c.width - 150 - 80 - 120, (c.height / 5) * 2.5, 80, 80);//fills the drawn figure with the fill style set above
 
-    ctx.strokeRect(150 + 120, (c.height / 5) * 4 - 9 + 35, 80, 80);
-    ctx.strokeRect(c.width - 150 - 80 - 120, (c.height / 5) * 4 - 9 + 35, 80, 80);
-    ctx.strokeRect(150 + 120, (c.height / 5) * 2.5, 80, 80);
-    ctx.strokeRect(c.width - 150 - 80 - 120, (c.height / 5) * 2.5, 80, 80);
+    ctx.strokeRect(150 + 120, (c.height / 5) * 4 - 9 + 35, 80, 80);//strokes the rectangle drawn onto canvas 9 at the point(150 + 120, (c.height / 5) * 4 - 9 + 35) with a height and width of 80
+    ctx.strokeRect(c.width - 150 - 80 - 120, (c.height / 5) * 4 - 9 + 35, 80, 80);//strokes the rectangle drawn onto canvas 9 at the point (c.width - 150 - 80 - 120, (c.height / 5) * 4 - 9 + 35) with a height and width of 80
+    ctx.strokeRect(150 + 120, (c.height / 5) * 2.5, 80, 80);//strokes the rectangle drawn onto canvas 9 at the point (150 + 120, (c.height / 5) * 2.5) with a height and width of 80
+    ctx.strokeRect(c.width - 150 - 80 - 120, (c.height / 5) * 2.5, 80, 80);//strokes the rectangle drawn onto canvas 9 at the point (c.width - 150 - 80 - 120, (c.height / 5) * 2.5) with a height and width of 80
   }
 }
